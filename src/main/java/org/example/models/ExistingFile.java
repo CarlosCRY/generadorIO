@@ -6,7 +6,7 @@ public class ExistingFile {
     private String name;
     private String route;
 
-    private ExistingFile(String name, String route) {
+    public ExistingFile(String name, String route) {
         this.name = name;
         this.route = route;
     }
