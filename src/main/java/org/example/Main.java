@@ -77,6 +77,20 @@ public class Main {
                         estoDIR(parget);
                     } else System.out.println("¡Este archivo no existe! ¡No me intentes tomar el pelo!");
                     break;
+                case 6:
+                    FileGeneratorIO filesIO = new FileGeneratorIO("otros/nord.txt");
+                    filesIO.createFileIO();
+                    System.out.println("¿Qué archivo quieres visualizar?");
+                    parget = Path.of(scr.nextLine());
+                    if (Files.exists(parget)) {
+                        System.out.println("Nombre: " + parget.getFileName() + "\nRuta absoluta: "
+                                + parget.toAbsolutePath());
+                        if (Files.isReadable(parget)) System.out.println("Es leible");
+                        else System.out.println("No es leible");
+                        System.out.println("Tamaño: "+ Files.size(parget) + " bytes");
+                        estoDIR(parget);
+                    } else System.out.println("¡Este archivo no existe! ¡No me intentes tomar el pelo!");
+                    break;
                 default:
                     System.out.println("No estás a lo que estás...");
                     continue;
