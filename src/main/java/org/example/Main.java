@@ -12,11 +12,12 @@ import java.util.stream.Stream;
 public class Main {
     public static Scanner scr = new Scanner(System.in);
     private static final String[] RUTAS = {"/home/diurno/IdeaProjects/generadorIO/otro/andanotherjuan.txt", "otro/ejemplo.txt"};
+    private static final String[] FNORDS = {"fuera/la_verdad.txt", "fuera/comoevitarqueaerismueraenffviirebirth.txt"};
 
     public static void main(String[] args) throws IOException {
 
         while (true) {
-            System.out.println("¿IO (0) o NIO (1)");
+            System.out.println("¿IO (0) o NIO (1)?");
             String answer = scr.nextLine().toUpperCase();
             switch (answer) {
                 case "IO", "0":
@@ -78,9 +79,19 @@ public class Main {
                     } else System.out.println("¡Este archivo no existe! ¡No me intentes tomar el pelo!");
                     break;
                 case 6:
-                    FileGeneratorIO filesIO = new FileGeneratorIO("otros/nord.txt");
+                    FileGeneratorIO filesIO = new FileGeneratorIO(FNORDS);
                     filesIO.createFileIO();
-                    System.out.println("¿Qué archivo quieres visualizar?");
+                    System.out.println("Algo que no debería existir existe ¿Cómo lo borramos?\n¿IO (0) o NIO (1)?");
+                    while (true) {
+                        String c = scr.nextLine();
+                        if (c.equals("0") || c.equalsIgnoreCase("IO") ) {
+
+                        } else if (c.equals("1") || c.equalsIgnoreCase("NIO") {
+
+                        } else {
+                            System.out.println("");
+                        }
+                    }
                     parget = Path.of(scr.nextLine());
                     if (Files.exists(parget)) {
                         System.out.println("Nombre: " + parget.getFileName() + "\nRuta absoluta: "
